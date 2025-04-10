@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo } from 'react';
 
-import CustomDropdownButton from '../../components/buttons/CustomDropdownButton';
 import Buttons from '../../components/buttons/NavigationButtons';
 import FlashCard from '../../components/flash-card/FlashCard';
 import useSpreadsheetData from '../../hooks/SpreadsheetData';

@@ -1,4 +1,3 @@
-// create a basic function component that returns a div with the text "MainView" in it
 import { FunctionComponent, useState } from 'react';
 
 import CustomDropdownButton from '../../components/buttons/CustomDropdownButton';
