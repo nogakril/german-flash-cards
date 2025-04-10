@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-import './Buttons.css';
+import './NavigationButtons.css';
 
 interface ButtonsProps {
   itemsLength: number;
@@ -10,7 +10,11 @@ interface ButtonsProps {
   setCurIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Buttons: React.FC<ButtonsProps> = ({ itemsLength, curIndex, setCurIndex }) => {
+const NavigationButtons: React.FC<ButtonsProps> = ({
+  itemsLength,
+  curIndex,
+  setCurIndex,
+}) => {
   const onClickLeft = useCallback(() => {
     if (curIndex > 0) {
       setCurIndex(curIndex - 1);
@@ -35,4 +39,4 @@ const Buttons: React.FC<ButtonsProps> = ({ itemsLength, curIndex, setCurIndex })
   );
 };
 
-export default Buttons;
+export default NavigationButtons;

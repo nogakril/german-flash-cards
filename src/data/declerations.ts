@@ -8,3 +8,5 @@ export type VocabEntity = {
   type: VocabType;
   article: VocabArticle;
 };
+
+export type ViewType = 'cards' | 'type';

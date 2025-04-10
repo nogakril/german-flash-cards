@@ -1,11 +1,11 @@
-import CardsView from './views/cards/CardsView';
+import MainView from './views/main/MainView';
 
 import './App.css';
 
 function App() {
   return (
     <>
-      <CardsView />
+      <MainView />
     </>
   );
 }

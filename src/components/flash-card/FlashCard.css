@@ -1,11 +1,13 @@
 
 
 .flash-card {
+    flex-grow: 0;
+    width: 100%;
     margin-bottom: 5vh;
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 75vh;
+
     height: 50vh;
     display: flex;
     flex-direction: column;

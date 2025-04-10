@@ -11,10 +11,12 @@
     "format": "eslint . --fix && npx prettier --config .prettierrc.js --list-different --write \"src/**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|scss|md)\""
   },
   "dependencies": {
+    "bootstrap": "^5.3.5",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "gapi-script": "^1.2.0",
     "public-google-sheets-parser": "^1.5.4",
     "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0"
   },
