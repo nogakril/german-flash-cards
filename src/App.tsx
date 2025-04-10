@@ -1,5 +1,3 @@
-import React from 'react';
-
 import CardsView from './views/cards/CardsView';
 
 import './App.css';
