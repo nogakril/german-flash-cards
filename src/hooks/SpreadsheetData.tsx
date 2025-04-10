@@ -18,6 +18,8 @@ const useSpreadsheetData = () => {
         translation: item.translation,
         type: item.type,
         article: item.article,
+        id: item.id,
+        plural: item.plural,
       }));
       setItems(entities);
     });

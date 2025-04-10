@@ -11,6 +11,7 @@
     "format": "eslint . --fix && npx prettier --config .prettierrc.js --list-different --write \"src/**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|scss|md)\""
   },
   "dependencies": {
+    "@custom-react-hooks/use-update-effect": "^1.5.1",
     "bootstrap": "^5.3.5",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "gapi-script": "^1.2.0",

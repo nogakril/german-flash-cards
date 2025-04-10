@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useMemo } from 'react';
 
 import Buttons from '../../components/buttons/NavigationButtons';
-import FlashCard from '../../components/flash-card/FlashCard';
+import TypeCard from '../../components/type-card/TypeCard';
 import useSpreadsheetData from '../../hooks/SpreadsheetData';
 
-import './CardsView.css';
+import './TypeView.css';
 
-const CardsView: FunctionComponent = () => {
+const TypeView: FunctionComponent = () => {
   const [curIndex, setCurIndex] = React.useState(0);
   const items = useSpreadsheetData();
 
@@ -19,7 +19,7 @@ const CardsView: FunctionComponent = () => {
       <span className="counter-container">{`${curIndex + 1} / ${itemsLength}`}</span>
       {!!items.length && (
         <div>
-          <FlashCard entity={items[curIndex]} />
+          <TypeCard entity={items[curIndex]} />
           <Buttons
             itemsLength={items.length}
             curIndex={curIndex}
@@ -31,4 +31,4 @@ const CardsView: FunctionComponent = () => {
   );
 };
 
-export default CardsView;
+export default TypeView;

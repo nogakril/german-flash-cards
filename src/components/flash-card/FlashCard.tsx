@@ -1,14 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
 
+import { VocabEntity } from '../../data/declerations';
+
 import './FlashCard.css';
 
-interface FlashCardProps {
-  sideA: string;
-  sideB: string;
+interface IProps {
+  entity: VocabEntity;
 }
 
-const FlashCard: React.FC<FlashCardProps> = ({ sideA, sideB }) => {
+const FlashCard: React.FC<IProps> = ({ entity }) => {
   const [flipped, setFlipped] = useState(false);
 
   const handleClick = () => {
@@ -16,8 +17,10 @@ const FlashCard: React.FC<FlashCardProps> = ({ sideA, sideB }) => {
   };
 
   return (
-    <div className={`flash-card ${flipped ? 'flipped' : sideB}`} onClick={handleClick}>
-      <div className="card-content">{flipped ? <p>{sideA}</p> : <p>{sideB}</p>}</div>
+    <div className={`flash-card ${flipped ? 'flipped' : ''}`} onClick={handleClick}>
+      <div className="card-content">
+        {flipped ? <p>{entity.word}</p> : <p>{entity.translation}</p>}
+      </div>
     </div>
   );
 };

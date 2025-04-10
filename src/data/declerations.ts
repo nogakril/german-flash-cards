@@ -7,6 +7,7 @@ export type VocabEntity = {
   translation: string;
   type: VocabType;
   article: VocabArticle;
+  plural: string;
 };
 
 export type ViewType = 'cards' | 'type';
