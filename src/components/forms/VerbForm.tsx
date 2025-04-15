@@ -56,7 +56,7 @@ const VerbForm: FunctionComponent<IProps> = ({
   return (
     <form className="type-card" onSubmit={onSubmit}>
       <label className="title">{`Definition: ${entity.translation}`}</label>
-      {Object.entries(entity.conjugation?.present || {}).map(([key, value]) => {
+      {Object.keys(entity.conjugation?.present || {}).map((key) => {
         return (
           <span className={'row-container'} key={key}>
             <label className="subtitle">{key}</label>
