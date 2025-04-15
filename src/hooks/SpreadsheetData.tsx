@@ -6,36 +6,36 @@ import { VocabConjugation, VocabEntity } from '../data/declerations';
 
 const SHEET_ID = '1v98WlHxJgd7oMsfra2cAD5KH_xFEmQdZXTEQIlKn3Uc';
 
-const mockItems: VocabEntity[] = [
-  {
-    word: 'nett',
-    translation: 'nice',
-    type: 'Adjective',
-  },
-  {
-    word: 'essen',
-    translation: 'eat',
-    type: 'Verb',
-    conjugation: {
-      present: {
-        ich: 'esse',
-        du: 'isst',
-        es: 'isst',
-        wir: 'essen',
-        ihr: 'esst',
-        sie: 'essen',
-      },
-      past: 'gegessen',
-    },
-  },
-  {
-    word: 'Tisch',
-    translation: 'Table',
-    type: 'Noun',
-    plural: 'Tische',
-    article: 'der',
-  },
-];
+// const mockItems: VocabEntity[] = [
+//   {
+//     word: 'nett',
+//     translation: 'nice',
+//     type: 'Adjective',
+//   },
+//   {
+//     word: 'essen',
+//     translation: 'eat',
+//     type: 'Verb',
+//     conjugation: {
+//       present: {
+//         ich: 'esse',
+//         du: 'isst',
+//         es: 'isst',
+//         wir: 'essen',
+//         ihr: 'esst',
+//         sie: 'essen',
+//       },
+//       past: 'gegessen',
+//     },
+//   },
+//   {
+//     word: 'Tisch',
+//     translation: 'Table',
+//     type: 'Noun',
+//     plural: 'Tische',
+//     article: 'der',
+//   },
+// ];
 
 const useSpreadsheetData = () => {
   const [items, setItems] = useState<VocabEntity[]>([]);
