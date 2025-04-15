@@ -4,6 +4,7 @@ import { useUpdateEffect } from '@custom-react-hooks/use-update-effect';
 
 import { VocabEntity } from '../../data/declerations';
 import NounForm from '../forms/NounForm';
+import VerbForm from '../forms/VerbForm';
 
 import './TypeCard.css';
 
@@ -31,7 +32,12 @@ const TypeCard: React.FC<IProps> = ({ entity }) => {
 
   return (
     <div className="type-card-container">
-      <NounForm entity={entity} handleAnswerRef={answerRef} handleCheckRef={checkRef} />
+      {entity.type === 'Noun' && (
+        <NounForm entity={entity} handleAnswerRef={answerRef} handleCheckRef={checkRef} />
+      )}
+      {entity.type === 'Verb' && (
+        <VerbForm entity={entity} handleAnswerRef={answerRef} handleCheckRef={checkRef} />
+      )}
       {!revealed && (
         <div className="button-container">
           <button onClick={handleAnswer}>Answer</button>

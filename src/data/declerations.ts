@@ -6,8 +6,21 @@ export type VocabEntity = {
   word: string;
   translation: string;
   type: VocabType;
-  article: VocabArticle;
-  plural: string;
+  article?: VocabArticle;
+  plural?: string;
+  conjugation?: {
+    present: VocabConjugation;
+    past: string;
+  };
+};
+
+export type VocabConjugation = {
+  ich: string;
+  du: string;
+  es: string;
+  wir: string;
+  ihr: string;
+  sie: string;
 };
 
 export type ViewType = 'cards' | 'type';

@@ -50,3 +50,10 @@
 .incorrect {
     border: 1px solid red;
 }
+
+.row-container {
+    width: 100%;
+    display: flex;
+    gap: 2vh;
+    align-items: center;
+}

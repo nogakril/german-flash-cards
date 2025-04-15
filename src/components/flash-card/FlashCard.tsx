@@ -19,7 +19,11 @@ const FlashCard: React.FC<IProps> = ({ entity }) => {
   return (
     <div className={`flash-card ${flipped ? 'flipped' : ''}`} onClick={handleClick}>
       <div className="card-content">
-        {flipped ? <p>{entity.word}</p> : <p>{entity.translation}</p>}
+        {flipped ? (
+          <p>{`${entity.article} ${entity.word}`}</p>
+        ) : (
+          <p>{entity.translation}</p>
+        )}
       </div>
     </div>
   );

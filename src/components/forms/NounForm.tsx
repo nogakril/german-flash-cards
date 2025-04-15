@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 
 import { VocabEntity } from '../../data/declerations';
 
-import './NounForm.css';
+import './Forms.css';
 
 type NounInput = {
   singular: string;
@@ -18,8 +18,12 @@ interface IProps {
   handleCheckRef: RefObject<(() => void) | null>;
 }
 
-const NounForm: FunctionComponent<IProps> = ({ entity, handleCheckRef }) => {
-  const { register, handleSubmit } = useForm<NounInput>();
+const NounForm: FunctionComponent<IProps> = ({
+  entity,
+  handleCheckRef,
+  handleAnswerRef,
+}) => {
+  const { register, handleSubmit, setValue } = useForm<NounInput>();
   const [correctSingular, setCorrectSingular] = React.useState<boolean | undefined>(
     undefined
   );
@@ -32,33 +36,41 @@ const NounForm: FunctionComponent<IProps> = ({ entity, handleCheckRef }) => {
     setCorrectPlural(data.plural === entity.plural);
   });
 
+  const handleAnswer = () => {
+    setValue('singular', entity.word);
+    setValue('plural', entity.plural || '');
+  };
+
   handleCheckRef.current = onSubmit;
+  handleAnswerRef.current = handleAnswer;
 
   return (
     <form className="type-card" onSubmit={onSubmit}>
-      <label className="title">Definition</label>
-      <span>{entity.translation}</span>
+      <label className="title">{`Definition: ${entity.translation}`}</label>
 
-      <label className="subtitle">Singular</label>
-      <input
-        className={classNames('input', {
-          correct: correctSingular === true,
-          incorrect: correctSingular === false,
-        })}
-        defaultValue="test"
-        {...register('singular')}
-        placeholder="Write the German"
-      />
+      <span className="row-container">
+        <label className="subtitle">Singular</label>
+        <input
+          className={classNames('input', {
+            correct: correctSingular === true,
+            incorrect: correctSingular === false,
+          })}
+          {...register('singular')}
+          placeholder="Write the German"
+        />
+      </span>
 
-      <label className="subtitle">Plural</label>
-      <input
-        className={classNames('input', {
-          correct: correctPlural === true,
-          incorrect: correctPlural === false,
-        })}
-        {...register('plural')}
-        placeholder="Write the German"
-      />
+      <span className="row-container">
+        <label className="subtitle">Plural</label>
+        <input
+          className={classNames('input', {
+            correct: correctPlural === true,
+            incorrect: correctPlural === false,
+          })}
+          {...register('plural')}
+          placeholder="Write the German"
+        />
+      </span>
     </form>
   );
 };
