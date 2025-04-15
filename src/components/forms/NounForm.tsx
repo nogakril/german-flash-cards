@@ -32,8 +32,13 @@ const NounForm: FunctionComponent<IProps> = ({
   );
 
   const onSubmit = handleSubmit((data) => {
-    setCorrectSingular(data.singular === entity.word);
-    setCorrectPlural(data.plural === entity.plural);
+    setCorrectSingular(
+      data.singular.toLocaleLowerCase() ===
+        (entity.article + ' ' + entity.word).toLocaleLowerCase()
+    );
+    setCorrectPlural(
+      data.plural.toLocaleLowerCase() === entity.plural?.toLocaleLowerCase()
+    );
   });
 
   const handleAnswer = () => {
@@ -56,7 +61,7 @@ const NounForm: FunctionComponent<IProps> = ({
             incorrect: correctSingular === false,
           })}
           {...register('singular')}
-          placeholder="Write the German"
+          placeholder="Write the German with the article: {der / die / das} {word}"
         />
       </span>
 

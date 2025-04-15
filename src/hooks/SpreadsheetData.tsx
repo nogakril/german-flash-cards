@@ -8,6 +8,11 @@ const SHEET_ID = '1v98WlHxJgd7oMsfra2cAD5KH_xFEmQdZXTEQIlKn3Uc';
 
 const mockItems: VocabEntity[] = [
   {
+    word: 'nett',
+    translation: 'nice',
+    type: 'Adjective',
+  },
+  {
     word: 'essen',
     translation: 'eat',
     type: 'Verb',

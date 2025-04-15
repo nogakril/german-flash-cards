@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import { useUpdateEffect } from '@custom-react-hooks/use-update-effect';
 
 import { VocabEntity } from '../../data/declerations';
+import AdjForm from '../forms/AdjForm';
 import NounForm from '../forms/NounForm';
 import VerbForm from '../forms/VerbForm';
 
@@ -37,6 +38,9 @@ const TypeCard: React.FC<IProps> = ({ entity }) => {
       )}
       {entity.type === 'Verb' && (
         <VerbForm entity={entity} handleAnswerRef={answerRef} handleCheckRef={checkRef} />
+      )}
+      {entity.type === 'Adjective' && (
+        <AdjForm entity={entity} handleAnswerRef={answerRef} handleCheckRef={checkRef} />
       )}
       {!revealed && (
         <div className="button-container">
