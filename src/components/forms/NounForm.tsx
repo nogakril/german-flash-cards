@@ -1,4 +1,4 @@
-import React, { FunctionComponent, RefObject } from 'react';
+import React, { FunctionComponent, RefObject, useEffect } from 'react';
 
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
@@ -23,7 +23,7 @@ const NounForm: FunctionComponent<IProps> = ({
   handleCheckRef,
   handleAnswerRef,
 }) => {
-  const { register, handleSubmit, setValue } = useForm<NounInput>();
+  const { register, handleSubmit, setValue, reset } = useForm<NounInput>();
   const [correctSingular, setCorrectSingular] = React.useState<boolean | undefined>(
     undefined
   );
@@ -48,6 +48,10 @@ const NounForm: FunctionComponent<IProps> = ({
 
   handleCheckRef.current = onSubmit;
   handleAnswerRef.current = handleAnswer;
+
+  useEffect(() => {
+    reset();
+  }, [entity]);
 
   return (
     <form className="type-card" onSubmit={onSubmit}>

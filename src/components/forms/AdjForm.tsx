@@ -1,4 +1,4 @@
-import React, { FunctionComponent, RefObject } from 'react';
+import React, { FunctionComponent, RefObject, useEffect } from 'react';
 
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
@@ -22,7 +22,7 @@ const AdjForm: FunctionComponent<IProps> = ({
   handleCheckRef,
   handleAnswerRef,
 }) => {
-  const { register, handleSubmit, setValue } = useForm<AdjInput>();
+  const { register, handleSubmit, setValue, reset } = useForm<AdjInput>();
   const [correctAdj, setCorrectAdj] = React.useState<boolean | undefined>(undefined);
 
   const onSubmit = handleSubmit((data) => {
@@ -35,6 +35,10 @@ const AdjForm: FunctionComponent<IProps> = ({
 
   handleCheckRef.current = onSubmit;
   handleAnswerRef.current = handleAnswer;
+
+  useEffect(() => {
+    reset();
+  }, [entity]);
 
   return (
     <form className="type-card" onSubmit={onSubmit}>

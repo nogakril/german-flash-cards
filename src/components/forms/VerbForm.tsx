@@ -1,4 +1,4 @@
-import React, { FunctionComponent, RefObject } from 'react';
+import React, { FunctionComponent, RefObject, useEffect } from 'react';
 
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
@@ -23,7 +23,7 @@ const VerbForm: FunctionComponent<IProps> = ({
   handleCheckRef,
   handleAnswerRef,
 }) => {
-  const { register, handleSubmit, setValue } = useForm<VerbInput>();
+  const { register, handleSubmit, setValue, reset } = useForm<VerbInput>();
   const [correctPast, setCorrectPast] = React.useState<boolean | undefined>(undefined);
   const [correctPresent, setCorrectPresent] = React.useState<{
     [key in keyof VocabConjugation]?: boolean;
@@ -52,6 +52,10 @@ const VerbForm: FunctionComponent<IProps> = ({
 
   handleCheckRef.current = onSubmit;
   handleAnswerRef.current = handleAnswer;
+
+  useEffect(() => {
+    reset();
+  }, [entity]);
 
   return (
     <form className="type-card" onSubmit={onSubmit}>
