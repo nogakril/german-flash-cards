@@ -15,6 +15,18 @@ Still in progress!
 
 ---
 
+ ## 📊 Word List (Google Sheet)
+The app fetches vocabulary from this Google Sheet:  
+👉 [German Vocabulary Sheet](https://docs.google.com/spreadsheets/d/1v98WlHxJgd7oMsfra2cAD5KH_xFEmQdZXTEQIlKn3Uc/edit?gid=0#gid=0)
+
+- To **add new words**, just edit the sheet.  
+- Each row represents a word entry (e.g. German | English | Notes).  
+- Changes will automatically be reflected in the app (next reload).
+
+> If you want your own version, make a copy of the sheet (`File > Make a copy`) and update the sheet ID in the app code.
+
+---
+
 ## 🚀 Getting Started
 1. Clone the repo:
    ```bash
