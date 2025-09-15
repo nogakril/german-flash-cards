@@ -39,7 +39,7 @@ const TypeCard: React.FC<IProps> = ({ entity }) => {
       {entity.type === 'Verb' && (
         <VerbForm entity={entity} handleAnswerRef={answerRef} handleCheckRef={checkRef} />
       )}
-      {entity.type === 'Adjective' && (
+      { (entity.type === 'Adjective' || entity.type === 'Adverb') && (
         <AdjForm entity={entity} handleAnswerRef={answerRef} handleCheckRef={checkRef} />
       )}
       {!revealed && (
