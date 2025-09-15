@@ -1,4 +1,4 @@
-export type VocabType = 'Adjective' | 'Noun' | 'Verb';
+export type VocabType = 'Adjective' | 'Noun' | 'Verb' | 'Adverb';
 
 export type VocabArticle = 'der' | 'die' | 'das';
 
